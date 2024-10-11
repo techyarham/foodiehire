@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Order Food | Foodie Hire</title>
+    <link rel="stylesheet" href="order.css">
+    <link rel="shortcut icon" href="Images/Untitled_design__2_-removebg-preview.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Bebas+Neue&family=Lora:ital,wght@0,400..700;1,400..700&family=Lora:ital,wght@0,400..700;1,400..700&family=Righteous&family=Righteous&display=swap"
+        rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Oswald:wght@200..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="modal fade" id="loginModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-custom">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="loginModalLabel">Login Required</h5>
+            </div>
+            <div class="modal-body">
+                <p>Please log in to continue.</p>
+            </div>
+            <div class="modal-footer">
+                <a href="login.html" class="btn  modal-login">Login</a>
+            </div>
+        </div>
+    </div>
+</div>
+    <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+            <a id="logo_text" class="navbar-brand" href="./index.html">
+                <img src="./Images/Untitled_design__2_-removebg-preview.png" alt="Logo" width="30" height="24"
+                    class="d-inline-block align-text-top logo">
+                Foodie Hire
+            </a>
+
+        </div>
+    </nav>
+
+    <div class="container">
+
+
+        <div class="order-form">
+
+
+            <div class="container mt-5">
+                <h2>Place Your Order</h2>
+                <div class="position-relative">
+                    <!-- Carousel Buttons -->
+                    <div class="carousel-control-prev" onclick="scrollLeftCarousel()">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    </div>
+                    <div class="carousel-control-next" onclick="scrollRightCarousel()">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    </div>
+
+                    <div class="scrolling-wrapper d-flex">
+<!-- chicken biryani -->
+                        <div class="card">
+                            <div class="card-img-container">
+                                <img src="./Images/chicken biryani.png" class="card-img-top" alt="Product 1">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Chicken Biryani</h5>
+                                <div class="item-quantity">
+                                    <button class="minus-button" id="cb-minus">-</button>
+                                    <div class="quantity">
+                                        <p id="cb-quantity-para"></p>
+                                    </div>
+                                    <button class="plus-button" id="cb-plus">+</button>
+                                </div>
+                                <p class="card-text">Price details will be discussed with the chef</p>
+                                <button  id="chicken-biryani" class=" btn add-product">Add</button>
+                            </div>
+                        </div>
+                        <!-- beef biryani -->
+                        <div class="card">
+                            <img src="./Images/beef biryani.png" class="card-img-top" alt="Product 2">
+                            <div class="card-body">
+                                <h5 class="card-title">Beef Biryani</h5>
+                                <div class="item-quantity">
+                                    <button class="minus-button" id="bb-minus">-</button>
+                                    <div class="quantity">
+                                        <p id="bb-quantity-para"></p>
+                                    </div>
+                                    <button class="plus-button" id="bb-plus">+</button>
+                                </div>
+                                <p class="card-text">Price details will be discussed with the chef</p>
+                                <button type="button" id="beef-biryani" class="btn add-product">Add</button>
+                            </div>
+                        </div>
+<!-- chicken karahi -->
+                        <div class="card">
+                            <img src="./Images/chicken karahi.png" class="card-img-top" alt="Product 3">
+                            <div class="card-body">
+                                <h5 class="card-title">Chicken Karahi</h5>
+                                <div class="item-quantity">
+                                    <button class="minus-button" id="k-minus">-</button>
+                                    <div class="quantity">
+                                        <p id="k-quantity-para"></p>
+                                    </div>
+                                    <button class="plus-button" id="k-plus">+</button>
+                                </div>
+                                <p class="card-text">Price details will be discussed with the chef</p>
+                                <button type="button" id="chicken-karahi" class="btn add-product">Add</button>
+                            </div>
+                        </div>
+                        <!-- qorma -->
+                        <div class="card">
+                            <img src="./Images/qorma.png" class="card-img-top" alt="Product 4">
+                            <div class="card-body">
+                                <h5 class="card-title">Qorma</h5>
+                                <div class="item-quantity">
+                                    <button class="minus-button" id="q-minus">-</button>
+                                    <div class="quantity">
+                                        <p id="q-quantity-para"></p>
+                                    </div>
+                                    <button class="plus-button" id="q-plus">+</button>
+                                </div>
+                                <p class="card-text">Price details will be discussed with the chef</p>
+                                <button type="button" id="qorma" class="btn add-product">Add</button>
+                            </div>
+                        </div>
+                        <!-- broast -->
+                        <div class="card">
+                            <img src="./Images/broasts.png" class="card-img-top" alt="Product 5">
+                            <div class="card-body">
+                                <h5 class="card-title">Broasts</h5>
+                                <div class="item-quantity">
+                                    <button class="minus-button" id="b-minus">-</button>
+                                    <div class="quantity">
+                                        <p id="b-quantity-para"></p>
+                                    </div>
+                                    <button class="plus-button" id="b-plus">+</button>
+                                </div>
+                                <p class="card-text">Price details will be discussed with the chef</p>
+                                <button type="button" id="broast" class="btn add-product">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+            <div class="city-specialorder">
+            
+            <select required class="form-select " id="city" aria-label="Default select example">
+                <option  disabled selected>Select Your City</option>
+                <option value="Karachi">Karachi</option>
+                <option value="Lahore">Lahore</option>
+                <option value="Islamabad">Islamabad</option>
+                <option value="Peshawar">Peshawar</option>
+                <option value="Quetta">Quetta</option>
+                <option value="Multan">Multan</option>
+              </select>
+            <div class="form-floating">
+                <textarea  class="form-control chef-message" placeholder="Tell us what do you want to eat" id="floatingTextarea2"
+                    style="height: 100px ; width: 100%;" required></textarea>
+                <label for="floatingTextarea2">Tell us your custom order!</label>
+            </div>
+           </div>
+
+            <div class="form-floating">
+                <textarea class="form-control adress" placeholder="Tell us what do you want to eat" id="floatingTextarea2"
+                    style="height: 100px ; width: 100%;" required></textarea>
+                <label for="floatingTextarea2">Your Complete Address</label>
+            </div>
+            <div class="form-floating">
+                <input class="form-control whatsapp" placeholder="Tell us what do you want to eat" id="floatingTextarea2"
+                    style="height: 80px ; width: 100%;" required></input>
+                <label for="floatingTextarea2">Your Whatsapp Number</label>
+            </div>
+
+        </div>
+        <div class="chef-btns">
+            <div class="chef-carousel-control-prev" onclick="chefScrollLeftCarousel()">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            </div>
+            
+        <div id="chefs-container">
+            
+        </div>
+        <div class="chef-carousel-control-next" onclick="chefScrollRightCarousel()">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </div>
+
+    </div>
+        <div class="order-all-info">
+            <h3>Order Details</h3>
+    <p id="order-info"></p>
+        <button id="clear">Clear</button>
+        <button type="button" id="submit-order-button">Submit</button>
+        </div>
+        
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+        crossorigin="anonymous"></script>
+    <script type="module" src="./order.js"></script>
+    
+</body>
+
+</html>

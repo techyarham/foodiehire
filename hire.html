@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hire Chef | Foodie Hire</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="shortcut icon" href="Images/Untitled_design__2_-removebg-preview.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="hire.css">
+
+</head>
+
+<body>
+    <div class="modal fade" id="loginModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-custom">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Login Required</h5>
+                </div>
+                <div class="modal-body">
+                    <p>Please log in to continue.</p>
+                </div>
+                <div class="modal-footer">
+                    <a href="login.html" class="btn  modal-login">Login</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="register-box">
+            <div class="logo mb-4">
+                <a href="./index.html">
+                    <img src="./Images/Untitled_design__2_-removebg-preview.png" alt="Food Logo">
+                </a>
+            </div>
+            <h1>Hire A Chef</h1>
+            <form id="hire-form">
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="name" placeholder="Your Name OR Company Name" required>
+                    <label for="name">Your Name OR Company Name</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="tel" class="form-control" id="phone" placeholder="Your Phone Number" required>
+                    <label for="phone">Phone Number</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <textarea class="form-control" placeholder="Your Complete Address" id="address"
+                        style="height: 100px;" required></textarea>
+                    <label for="address">Your Complete Address</label>
+                </div>
+                <div class="mb-3">
+                    <select id="city" class="form-select" required>
+                        <option value="" disabled selected>Select your city</option>
+                        <option value="Karachi">Karachi</option>
+                        <option value="Lahore">Lahore</option>
+                        <option value="Islamabad">Islamabad</option>
+                        <option value="Peshawar">Peshawar</option>
+                        <option value="Quetta">Quetta</option>
+                        <option value="Multan">Multan</option>
+                    </select>
+                </div>
+                <div class="chef-btns mb-3">
+                    <div class="d-flex align-items-center">
+                        <button type="button" class="btn btn-secondary me-2"
+                            onclick="chefScrollLeftCarousel()">&#8592;</button>
+                        <div id="chefs-container" class="d-flex overflow-auto">
+
+                        </div>
+                        <button type="button" class="btn btn-secondary "
+                            onclick="chefScrollRightCarousel()">&#8594;</button>
+                    </div>
+                </div>
+                <div class="form-floating mb-3">
+                    <textarea class="form-control" placeholder="Any Message For Chef?" id="message"
+                        style="height: 100px;"></textarea>
+                    <label for="message">Any Message For Chef?</label>
+                </div>
+                <div class="mb-3">
+                    <select id="duration" class="form-select" required>
+                        <option value="" disabled selected>Select duration</option>
+                        <option value="1-day">1 Day</option>
+                        <option value="3-days">3 Days</option>
+                        <option value="1-week">1 Week</option>
+                        <option value="1-month">1 Month</option>
+                        <option value="6-months">6 Months</option>
+                        <option value="1-year">1 Year</option>
+                    </select>
+                </div>
+                <button type="submit" id="submit-order-button" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script type="module" src="hire.js"></script>
+</body>
+
+</html>
