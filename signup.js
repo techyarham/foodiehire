@@ -79,7 +79,7 @@ let signUpWithGoogle = async () => {
       sessionStorage.setItem("user-creds", JSON.stringify(credentials));
   
       
-      window.location.href = "user-dashboard.html";
+      window.location.href = "index.html";
     } catch (error) {
       console.error(error);
       alert(error.message);
