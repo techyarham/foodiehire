@@ -1,6 +1,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-app.js";
 import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-firestore.js";
 import { getAuth, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-auth.js";
+
 // Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyDiMGg52D5wfpImycjlGi6TueAm56v5cwg",
@@ -16,6 +17,7 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore();
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
+
 // DOM Elements
 let email = document.querySelector('#email');
 let password = document.querySelector('#password');
@@ -38,7 +40,6 @@ let signInUser = async (evt) => {
     const chefSnap = await getDoc(chefRef);
 
     if (userSnap.exists()) {
-   
       sessionStorage.setItem("user-info", JSON.stringify({
         name: userSnap.data().name,
         email: userSnap.data().email,
@@ -47,16 +48,15 @@ let signInUser = async (evt) => {
       sessionStorage.setItem("user-creds", JSON.stringify(credentials.user));
       window.location.href = "index.html";
     } else if (chefSnap.exists()) {
-      
       sessionStorage.setItem("user-info", JSON.stringify({
         name: chefSnap.data().name,
         email: chefSnap.data().email,
+        city: chefSnap.data().city,
         role: 'chef'  
       }));
       sessionStorage.setItem("user-creds", JSON.stringify(credentials.user));
       window.location.href = "profile.html";  
     } else {
-     
       alert("No user or chef found with this account.");
     }
   } catch (error) {
@@ -64,18 +64,29 @@ let signInUser = async (evt) => {
   }
 };
 
-
 form.addEventListener('submit', signInUser);
 
+// Manage session function
 const manageSession = async (credentials) => {
   const userId = credentials.user.uid;
 
- 
+  // References to collections
+  const userRef = doc(db, "Users", userId);
   const chefRef = doc(db, "chef", userId);
+
+  // Fetch documents
+  const userSnap = await getDoc(userRef);
   const chefSnap = await getDoc(chefRef);
 
-  if (chefSnap.exists()) {
-    
+  if (userSnap.exists()) {
+    sessionStorage.setItem("user-info", JSON.stringify({
+      name: userSnap.data().name,
+      email: userSnap.data().email,
+      role: 'user'
+    }));
+    sessionStorage.setItem("user-creds", JSON.stringify(credentials.user));
+    window.location.href = "index.html";
+  } else if (chefSnap.exists()) {
     sessionStorage.setItem("user-info", JSON.stringify({
       name: chefSnap.data().name,
       email: chefSnap.data().email,
@@ -84,26 +95,12 @@ const manageSession = async (credentials) => {
     }));
     sessionStorage.setItem("user-creds", JSON.stringify(credentials.user));
     window.location.href = "profile.html";
-   
-    const userRef = doc(db, "Users", userId);
-    const userSnap = await getDoc(userRef);
-
-    if (userSnap.exists()) {
-   
-      sessionStorage.setItem("user-info", JSON.stringify({
-        name: userSnap.data().name,
-        email: userSnap.data().email,
-        role: 'user'
-      }));
-      sessionStorage.setItem("user-creds", JSON.stringify(credentials.user));
-      window.location.href = "profile.html";  
-    } else {
-      alert("User not found in either Users or Chefs collection. Please register first.");
-    }
+  } else {
+    alert("No user or chef found with this account. Please register first.");
   }
 };
 
-
+// Google Sign-In function
 let signInWithGoogle = async () => {
   try {
     const result = await signInWithPopup(auth, provider);
@@ -113,5 +110,5 @@ let signInWithGoogle = async () => {
     alert(error.message);
   }
 };
-document.querySelector('.google-btn').addEventListener('click',signInWithGoogle)
 
+document.querySelector('.google-btn').addEventListener('click', signInWithGoogle);
