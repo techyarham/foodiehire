@@ -28,6 +28,7 @@ body {
   color: #D30E29;
   border: 2px solid #D30E29;
   font-weight: bold;
+    transition: all 0.4s ease;
 }
 #login:hover {
   background-color: #D30E29;
@@ -42,6 +43,7 @@ body {
   color: #D30E29;
   border: 2px solid #D30E29;
   font-weight: bold;
+    transition: all 0.4s ease;
 }
 #signup:hover {
   background-color: #D30E29;
@@ -56,6 +58,7 @@ body {
   color: #D30E29;
   border: 2px solid #D30E29;
   font-weight: bold;
+    transition: all 0.4s ease;
 }
 #profile:hover {
   background-color: #D30E29;
