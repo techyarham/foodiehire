@@ -87,7 +87,7 @@ button[type="submit"]:hover {
 
 .card-body {
     background-color: rgb(235, 235, 235);
-    border-radius: 2vw;
+    
 }
 
 #chefs-container {
@@ -137,6 +137,8 @@ button[type="submit"]:hover {
     align-items: center;
     width: 40px;
     border-radius: 50%;
+     z-index: 10;
+     opacity: .5;
 }
 
 .modal-custom {
