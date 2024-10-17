@@ -20,32 +20,46 @@ body {
     margin-left: 2%;
 }
 #login {
-    border: none;
-    background-color: #D30E29;
-    margin: 0px 10px;
-    padding: 5px 10px;
-    border-radius: 20px;
-    color: #f5f5f5;
-    font-family: "Roboto", sans-serif;
-}
-
-#signup {
-    border: none;
-    background-color: #D30E29;
-    margin: 0px 10px;
-    padding: 5px 10px;
-    border-radius: 20px;
-    color: #f5f5f5;
-    font-family: "Roboto", sans-serif;
-}
-#profile {
-  border: none;
-  background-color: #D30E29;
-  margin: 0px 10px;
+ margin: 0px 10px;
   padding: 5px 10px;
   border-radius: 20px;
-  color: #f5f5f5;
   font-family: "Roboto", sans-serif;
+  background-color: transparent;
+  color: #D30E29;
+  border: 2px solid #D30E29;
+  font-weight: bold;
+}
+#login:hover {
+  background-color: #D30E29;
+  color: white;
+}
+#signup {
+     margin: 0px 10px;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-family: "Roboto", sans-serif;
+  background-color: transparent;
+  color: #D30E29;
+  border: 2px solid #D30E29;
+  font-weight: bold;
+}
+#signup:hover {
+  background-color: #D30E29;
+  color: white;
+}
+#profile {
+     margin: 0px 10px;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-family: "Roboto", sans-serif;
+  background-color: transparent;
+  color: #D30E29;
+  border: 2px solid #D30E29;
+  font-weight: bold;
+}
+#profile:hover {
+  background-color: #D30E29;
+  color: white;
 }
 #navbar-btns{
   display: flex;
@@ -94,15 +108,33 @@ body {
 
 
 }
-
-
-.order-hire {
+#order {
     border: none;
     background-color: rgb(195, 176, 8);
     padding: 5px 20px;
     border-radius: 5px;
+    transition: all 0.4s ease;
+   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
+}
+#order:hover {
+  background-color:rgb(180, 165, 26) ;
+  transform: scale(1.2) rotate(-5deg);
 
 }
+#hire {
+  border: none;
+  background-color: rgb(195, 176, 8);
+  padding: 5px 20px;
+  border-radius: 5px;
+  transition: all 0.4s ease;
+ box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
+}
+#hire:hover {
+background-color:rgb(180, 165, 26) ;
+transform: scale(1.2) rotate(5deg);
+
+}
+
 #register-head{
   color: #1C2826;
  
@@ -148,6 +180,13 @@ padding: 3px 10px;
 /* font-size: 20px; */
 border: none;
 margin: 1%;
+border-radius: 5px;
+transition: all 0.4s ease;
+box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
+}
+#register_button:hover{
+  background-color:rgb(180, 165, 26) ;
+  transform: scale(1.2) rotate(-5deg);
 }
 .offers{
 background-color: #F5DDDD;
@@ -165,11 +204,19 @@ text-align: center;
 display: grid;
 font-family: "Raleway", sans-serif;
 }
-#offers_button{
-padding: 2% 5%;
-border-radius: 5px;
-border: none;
-background-color: rgb(195, 176, 8);
+#offers_button {
+  border: none;
+  background-color: rgb(195, 176, 8);
+  padding: 5px 20px;
+  border-radius: 5px;
+  transition: all 0.4s ease;
+ box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
+ border-radius: 5px;
+}
+#offers_button:hover {
+background-color:rgb(180, 165, 26) ;
+transform: scale(1.2) rotate(5deg);
+
 }
   .crousal{
     width: 50%;
