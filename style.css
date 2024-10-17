@@ -130,6 +130,7 @@ padding: 5%;
 }
 .chef_register button{
   font-family: "Roboto", sans-serif;
+    border-radius: 5px;
 }
 #register_para{
 color: #f5f5f5;
