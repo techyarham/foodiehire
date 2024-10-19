@@ -348,7 +348,7 @@ async function fetchChefs() {
 
 function selectChef(id) {
     selectedChefId = id; 
-    alert(`Chef selected successfully!`);
+
 
     
     const selectButtons = document.querySelectorAll('.select-chef-btn');
@@ -464,7 +464,7 @@ if (submitOrderBtn) {
             });
 
             alert("Order placed successfully!");
-
+window.location.href="index.html";
         
             clearForm();
         } catch (error) {
