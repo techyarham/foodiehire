@@ -95,6 +95,7 @@ async function fetchUserOrders(userId) {
                     <p class="card-text">Address: ${order.address}</p>
                     <p class="card-text">WhatsApp: ${order.whatsapp}</p>
                     <p class="card-text">Message: ${order.message}</p>
+                    <p class="card-text">Duration: ${order.duration}</p>
                     <p class="card-text">Timestamp: ${new Date(order.timestamp.seconds * 1000).toLocaleString()}</p>
                 </div>
             `;
