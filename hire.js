@@ -154,7 +154,7 @@ hireForm.addEventListener('submit', async (e) => {
             timestamp: new Date()
         });
         alert("Order placed successfully!");
-
+window.location.href="index.html";
 
         hireForm.reset();
         selectedChefId = null;
