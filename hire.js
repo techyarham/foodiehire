@@ -120,13 +120,13 @@ hireForm.addEventListener('submit', async (e) => {
 
 
     const name = nameInput.value.trim();
-    const phone = phoneInput.value.trim();
+    const whatsapp = phoneInput.value.trim();
     const address = addressInput.value.trim();
     const city = citySelect.value;
     const message = messageInput.value.trim();
     const duration = durationSelect.value;
 
-    if (!name || !phone || !address || !city || !duration) {
+    if (!name || !whatsapp || !address || !city || !duration) {
         alert("Please fill in all the required fields.");
         return;
     }
@@ -136,7 +136,7 @@ hireForm.addEventListener('submit', async (e) => {
         const ordersCollection = collection(db, `chef/${selectedChefId}/orders`);
         await addDoc(ordersCollection, {
             name: name,
-            phone: phone,
+            whatsapp: whatsapp,
             address: address,
             city: city,
             message: message,
@@ -146,7 +146,7 @@ hireForm.addEventListener('submit', async (e) => {
 
         const userOrdersCollection = collection(db, `Users/${userId}/orders`);
         await addDoc(userOrdersCollection, {
-            phone: phone,
+            whatsapp: whatsapp,
             address: address,
             city: city,
             message: message,
