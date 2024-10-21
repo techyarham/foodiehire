@@ -83,25 +83,36 @@ async function fetchUserOrders(userId) {
             return;
         }
 
-        orders.forEach(order => {
-            const orderCard = document.createElement('div');
-            orderCard.classList.add('card', 'm-2');
-            orderCard.style.width = "18rem";
-            orderCard.innerHTML = `
-                <div class="card-body">
-                    <h5 class="card-title">Order ID: ${order.id}</h5>
-                    <p class="card-text">Order Details: ${order.orderDetails}</p>
-                    <p class="card-text">City: ${order.city}</p>
-                    <p class="card-text">Address: ${order.address}</p>
-                    <p class="card-text">WhatsApp: ${order.whatsapp}</p>
-                    <p class="card-text">Message: ${order.message}</p>
-                    <p class="card-text">Duration: ${order.duration}</p>
-                    <p class="card-text">Timestamp: ${new Date(order.timestamp.seconds * 1000).toLocaleString()}</p>
-                </div>
-            `;
-            ordersContainer.appendChild(orderCard);
-        });
-    }
+         orders.forEach(order => {
+        const orderCard = document.createElement('div');
+        orderCard.classList.add('card', 'm-2');
+        orderCard.style.width = "18rem";
+        
+        let durationText = "";
+        if (order.duration) {
+            durationText = `<p class="card-text">Duration: ${order.duration}</p>`;
+        }
+        let orderDetails = "";
+        if (order.orderDetails) {
+            orderDetails = `<p class="card-text">Order Details: ${order.orderDetails}</p>`;
+        }
+        
+        orderCard.innerHTML = `
+            <div class="card-body">
+                <h5 class="card-title">Order ID: ${order.id}</h5>
+                ${orderDetails}  <!-- Only add duration if it exists -->
+                <p class="card-text">City: ${order.city}</p>
+                <p class="card-text">Address: ${order.address}</p>
+                <p class="card-text">WhatsApp: ${order.whatsapp}</p>
+                <p class="card-text">Message: ${order.message}</p>
+                ${durationText}  <!-- Only add duration if it exists -->
+                <p class="card-text">Timestamp: ${new Date(order.timestamp.seconds * 1000).toLocaleString()}</p>
+            </div>
+        `;
+        ordersContainer.appendChild(orderCard);
+    });
+}
+
 
 
     async function initializeOrderHistory() {
